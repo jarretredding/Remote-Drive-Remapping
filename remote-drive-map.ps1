@@ -14,7 +14,7 @@ This script was designed for remote users that need to have their login scripts 
 #>
 
 #Name or IP of Domain Controller
-$dc = 'fp-dc1'
+$dc = 'dc-name'
 
 $file = (([adsisearcher]"(&(objectCategory=User)(samaccountname=$env:UserName))").findall()).properties.scriptpath
 start-process "cmd.exe" "/c \\$dc\NETLOGON\$file";
